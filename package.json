@@ -1,0 +1,37 @@
+{
+  "name": "grand-view-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GRAND VIEW CERAMIC AND MARBLE WORK — static marketing website (local development only, not published).",
+  "type": "module",
+  "scripts": {
+    "build": "node tools/gen-dict.mjs && node tools/build.mjs",
+    "test": "node tests/run.js",
+    "verify": "npm run build && node tests/run.js",
+    "serve": "python -m http.server 8000",
+    "serve:dist": "python -m http.server 8000 --directory dist",
+    "check:js": "node --check assets/js/main.js && node --check src/js/motion.js && node --check src/js/i18n.js && node --check tools/gen-dict.mjs",
+    "test:e2e": "playwright test --config=playwright.config.js",
+    "test:visual": "playwright test tests/visual --config=playwright.config.js",
+    "test:a11y": "playwright test tests/e2e/accessibility.spec.js --config=playwright.config.js",
+    "test:e2e:ui": "playwright test --config=playwright.config.js --ui",
+    "test:browser:install": "playwright install chromium",
+    "verify:e2e": "npm run build && playwright test --config=playwright.config.js"
+  },
+  "keywords": [
+    "static-site",
+    "abu-dhabi",
+    "ceramic",
+    "marble"
+  ],
+  "license": "UNLICENSED",
+  "private_dependencies_note": "No runtime dependencies. Node and Playwright are dev-only tools used for local build/test and are never shipped to the browser.",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@playwright/test": "1.63.0"
+  },
+  "overrides": {
+    "playwright-core": "1.63.0"
+  }
+}
+

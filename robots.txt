@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Proposed future GitHub Pages demo URL (not yet published or live):
+Sitemap: https://mehdihasanbca.github.io/grand-view-demo/sitemap.xml
+

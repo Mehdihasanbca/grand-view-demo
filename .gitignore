@@ -1,0 +1,43 @@
+# Operating system & editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependencies & build outputs
+node_modules/
+dist/
+test-results/
+playwright-report/
+
+# Secrets, keys, tokens & environment variables
+*.env
+*.env.*
+*.local
+*.key
+*.pem
+*.cert
+*.crt
+*.pfx
+*.p12
+*.secret
+*credentials*
+*token*
+*.id_rsa
+*.id_ed25519
+
+# Internal agent workflows, memory & engineering prompt files
+AGENTS.md
+OPENCODE_GUIDE.md
+PROJECT_MEMORY.md
+docs/audits/
+docs/tasks/
+docs/memory/
+
+# Ad-hoc local scratch scripts
+*.cjs
+*.txt
+!robots.txt
+

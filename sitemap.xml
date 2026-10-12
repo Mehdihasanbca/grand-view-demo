@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Proposed future GitHub Pages demo URL structure (not yet published or live) -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://mehdihasanbca.github.io/grand-view-demo/</loc></url>
+  <url><loc>https://mehdihasanbca.github.io/grand-view-demo/about.html</loc></url>
+  <url><loc>https://mehdihasanbca.github.io/grand-view-demo/services.html</loc></url>
+  <url><loc>https://mehdihasanbca.github.io/grand-view-demo/tiles-marble.html</loc></url>
+  <url><loc>https://mehdihasanbca.github.io/grand-view-demo/plumbing.html</loc></url>
+  <url><loc>https://mehdihasanbca.github.io/grand-view-demo/electrical.html</loc></url>
+  <url><loc>https://mehdihasanbca.github.io/grand-view-demo/projects.html</loc></url>
+  <url><loc>https://mehdihasanbca.github.io/grand-view-demo/contact.html</loc></url>
+  <url><loc>https://mehdihasanbca.github.io/grand-view-demo/ar/index.html</loc></url>
+  <url><loc>https://mehdihasanbca.github.io/grand-view-demo/ar/about.html</loc></url>
+  <url><loc>https://mehdihasanbca.github.io/grand-view-demo/ar/services.html</loc></url>
+  <url><loc>https://mehdihasanbca.github.io/grand-view-demo/ar/tiles-marble.html</loc></url>
+  <url><loc>https://mehdihasanbca.github.io/grand-view-demo/ar/plumbing.html</loc></url>
+  <url><loc>https://mehdihasanbca.github.io/grand-view-demo/ar/electrical.html</loc></url>
+  <url><loc>https://mehdihasanbca.github.io/grand-view-demo/ar/projects.html</loc></url>
+  <url><loc>https://mehdihasanbca.github.io/grand-view-demo/ar/contact.html</loc></url>
+</urlset>
+
