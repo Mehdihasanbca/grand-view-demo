@@ -31,6 +31,18 @@
     }, { capture: true });
   }
 
+  /* ---------- Scroll Progress Indicator ---------- */
+  const progressBar = document.querySelector('#scroll-progress-bar');
+  if (progressBar) {
+    const onScroll = () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      progressBar.style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
 
   /* ---------- Footer year ---------- */
   document.querySelectorAll('[data-current-year]').forEach((el) => {
@@ -211,6 +223,19 @@
       if (resWaste) resWaste.textContent = netArea > 0 ? (grossArea - netArea).toFixed(2) + ' m² (' + Math.round(wastePct * 100) + '%)' : '—';
       if (resTiles) resTiles.textContent = netArea > 0 ? estTiles.toLocaleString() + ' tiles' : '—';
       if (resBoxes) resBoxes.textContent = netArea > 0 ? estBoxes.toLocaleString() + ' boxes' : '—';
+
+      // Update pattern visualizer grid
+      const visGrid = calcContainer.querySelector('#calc-vis-grid');
+      const visCaption = calcContainer.querySelector('#calc-vis-caption');
+      if (visGrid) {
+        const aspect = tileSelect?.selectedOptions[0]?.dataset.aspect;
+        const isRect = aspect === '1/2';
+        visGrid.classList.toggle('is-rectangular', isRect);
+        if (visCaption) {
+          const rawFormat = tileLabel.split('(')[0].trim();
+          visCaption.textContent = rawFormat + ' Alignment Preview';
+        }
+      }
 
       // Live update WhatsApp share link
       if (shareBtn && netArea > 0) {

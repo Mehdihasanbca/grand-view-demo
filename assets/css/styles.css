@@ -1297,6 +1297,96 @@ body,body *{transition-property:background-color,color,border-color,outline-colo
   color: var(--th-text);
 }
 
+/* ==========================================================================
+   POLISH EXTENSIONS: Scroll Progress, Live Tile Visualizer & Tactile Feedback
+   ========================================================================== */
+.scroll-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2.5px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  z-index: 35;
+  pointer-events: none;
+  transition: width 80ms ease-out;
+}
+[dir="rtl"] .scroll-progress-bar {
+  left: auto;
+  right: 0;
+}
+
+/* Tile Area Calculator Live Pattern Visualizer */
+.calc-visualizer-box {
+  margin-top: 20px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.calc-vis-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold-light);
+  font-weight: 600;
+}
+.calc-vis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  width: 190px;
+  padding: 10px;
+  background: #080808;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.calc-vis-grid.is-rectangular {
+  grid-template-columns: repeat(2, 1fr);
+}
+.vis-tile {
+  aspect-ratio: 1 / 1;
+  background: rgba(214, 170, 73, 0.22);
+  border: 1px solid rgba(214, 170, 73, 0.45);
+  border-radius: 3px;
+  transition: aspect-ratio 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+.vis-tile:hover {
+  background: rgba(214, 170, 73, 0.4);
+  border-color: var(--gold-light);
+}
+.calc-vis-grid.is-rectangular .vis-tile {
+  aspect-ratio: 1 / 2;
+}
+.calc-vis-caption {
+  font-size: 12px;
+  color: var(--muted);
+}
+[data-theme="day"] .calc-visualizer-box,
+[data-theme="morning"] .calc-visualizer-box {
+  background: var(--th-surface-2);
+  border-color: var(--th-border);
+}
+[data-theme="day"] .calc-vis-grid,
+[data-theme="morning"] .calc-vis-grid {
+  background: var(--th-surface);
+  border-color: var(--th-border);
+}
+
+/* Tactile Micro-Interactions */
+.mobile-action-btn:active,
+.button:active,
+.theme-toggle:active,
+.lang-select:active {
+  transform: scale(0.96);
+}
+
+
 
 
 
